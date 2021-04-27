@@ -51,6 +51,18 @@ public class UserRegistration {
         }
     }
 
+    public static boolean validatePassword(String password) {
+        String passwordExp1 = "[a-zA-Z]{8,}"; // password should have minimum 8 characters
+
+        if (password.matches(passwordExp1)) {
+            System.out.println("'" + password + "'" + " validation success !");
+            return true;
+        } else {
+            System.out.println("'" + password + "'" + " Invalid Input ");
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Project ");
         Scanner scan = new Scanner(System.in);
@@ -70,6 +82,10 @@ public class UserRegistration {
         System.out.println("Enter Mobile Number");
         String mobileNo = scan.nextLine();
         System.out.println(validateMobileNumber(mobileNo));
+        // Password
+        System.out.println("Enter Password");
+        String password = scan.nextLine();
+        System.out.println(validatePassword(password));
 
         scan.close();
     }
