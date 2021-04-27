@@ -40,6 +40,17 @@ public class UserRegistration {
         }
     }
 
+    public static boolean validateMobileNumber(String number) {
+        String mobExp = "([0]{1}\\s|[+][9]{1}[1]{1}\\s)?[6-9]{1}[0-9]{9}";
+        if (number.matches(mobExp)) {
+            System.out.println("'" + number + "'" + " validation success !");
+            return true;
+        } else {
+            System.out.println("'" + number + "'" + " Invalid Input ");
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Project ");
         Scanner scan = new Scanner(System.in);
@@ -55,6 +66,10 @@ public class UserRegistration {
         System.out.println("Enter Mail address");
         String email = scan.nextLine();
         System.out.println(validateEmail(email));
+        // Mobile No
+        System.out.println("Enter Mobile Number");
+        String mobileNo = scan.nextLine();
+        System.out.println(validateMobileNumber(mobileNo));
 
         scan.close();
     }
