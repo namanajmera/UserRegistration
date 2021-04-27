@@ -26,17 +26,36 @@ public class UserRegistration {
             System.out.println("'" + name + "'" + " Invalid Input ");
             return false;
         }
+    }
 
+    public static boolean validateEmail(String mail) {
+        String emailExp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+$";
+
+        if (mail.matches(emailExp)) {
+            System.out.println("'" + mail + "'" + " validation success !");
+            return true;
+        } else {
+            System.out.println("'" + mail + "'" + " Invalid Input ");
+            return false;
+        }
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration Project ");
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        // First Name
         System.out.println("Enter First name ");
-        String first_name = sc.nextLine();
+        String first_name = scan.nextLine();
         System.out.println(validateFirstName(first_name));
+        // Last Name
         System.out.println("Enter Last name ");
-        String last_name = sc.nextLine();
+        String last_name = scan.nextLine();
         System.out.println(validateLastName(last_name));
+        // Email
+        System.out.println("Enter Mail address");
+        String email = scan.nextLine();
+        System.out.println(validateEmail(email));
+
+        scan.close();
     }
 }
