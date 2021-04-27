@@ -52,7 +52,7 @@ public class UserRegistration {
     }
 
     public static boolean validatePassword(String password) {
-        String passwordExp1 = "^(?=.*?[A-Z])(?=.*?[0-9])[a-zA-Z0-9]{8,}";
+        String passwordExp1 = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&+=])(?=\\S+$).{8,}";
         if (password.matches(passwordExp1)) {
             System.out.println("'" + password + "'" + " validation success !");
             return true;
