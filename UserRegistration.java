@@ -52,10 +52,8 @@ public class UserRegistration {
     }
 
     public static boolean validatePassword(String password) {
-        String passwordExp1 = "[a-zA-Z]{8,}"; // password should have minimum 8 characters
-        String passwordExp2 = ".*[A-Z].*"; // Rule 2: password should have atleast one Upper case
-
-        if (password.matches(passwordExp1) && password.matches(passwordExp2)) {
+        String passwordExp1 = "^(?=.*?[A-Z])(?=.*?[0-9])[a-zA-Z0-9]{8,}";
+        if (password.matches(passwordExp1)) {
             System.out.println("'" + password + "'" + " validation success !");
             return true;
         } else {
@@ -71,15 +69,15 @@ public class UserRegistration {
         System.out.println("Enter First name ");
         String first_name = scan.nextLine();
         System.out.println(validateFirstName(first_name));
-        // Last Name
+        // // Last Name
         System.out.println("Enter Last name ");
         String last_name = scan.nextLine();
         System.out.println(validateLastName(last_name));
-        // Email
+        // // Email
         System.out.println("Enter Mail address");
         String email = scan.nextLine();
         System.out.println(validateEmail(email));
-        // Mobile No
+        // // Mobile No
         System.out.println("Enter Mobile Number");
         String mobileNo = scan.nextLine();
         System.out.println(validateMobileNumber(mobileNo));
