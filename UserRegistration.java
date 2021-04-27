@@ -53,8 +53,9 @@ public class UserRegistration {
 
     public static boolean validatePassword(String password) {
         String passwordExp1 = "[a-zA-Z]{8,}"; // password should have minimum 8 characters
+        String passwordExp2 = ".*[A-Z].*"; // Rule 2: password should have atleast one Upper case
 
-        if (password.matches(passwordExp1)) {
+        if (password.matches(passwordExp1) && password.matches(passwordExp2)) {
             System.out.println("'" + password + "'" + " validation success !");
             return true;
         } else {
