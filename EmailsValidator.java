@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class EmailsValidator {
     public static void main(String[] args) {
 
-        List<String> emails = new ArrayList();
+        List<String> emails = new ArrayList<>();
         // Valid emails
         emails.add("abc@yahoo.com");
         emails.add("abc-100@yahoo.com");

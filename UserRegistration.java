@@ -29,7 +29,7 @@ public class UserRegistration {
     }
 
     public static boolean validateEmail(String mail) {
-        String emailExp = "^[a-zA-Z0-9+_.-]+@[a-zA-Z.-]+$";
+        String emailExp = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z0-9]{2,6}$";
 
         if (mail.matches(emailExp)) {
             System.out.println("'" + mail + "'" + " validation success !");
